@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="{{.Site.Language.Lang}}">
+
+{{ partial "head.html" . }}
+<body>
+    <div id="particles-js">
+    </div>
+    <div class="container">
+        <header class="main-header">
+            <div class="row">
+                <div class="column">
+                    <img src="{{.Site.BaseURL}}/img/portfolio-logo.png" alt="" srcset="">
+                    <h1 class="white-text">{{.Site.Params.author}}</h1>
+                    <p class="work-titles white-text lower-opacity">{{.Site.Params.jobTitle}}</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Begin nav row -->
+        <nav data-gumshoe-header id="nav-bar" class="main-nav">
+            <span class="menu-button">{{.Site.Params.menus.menuTitle}}</span>
+            <ul data-gumshoe>
+                <li>
+                    <a href="#intro" class="is-active">{{.Site.Params.menus.aboutMe}}</a>
+                </li>
+                <li>
+                    <a href="#projects" class="">{{.Site.Params.menus.projects}}</a>
+                </li>
+                <li>
+                    <a href="#experience">{{.Site.Params.menus.experience}}</a>
+                </li>
+                <li>
+                    <a href="#contact">{{.Site.Params.menus.contact}}</a>
+                </li>
+            </ul>
+            <a href="{{.Site.BaseURL}}{{.Site.Params.menus.langswitcher.url}}" title="" aria-label="{{.Site.Params.menus.langswitcher.label}}"><img class="float-right img-language" src="{{.Site.BaseURL}}/img/{{.Site.Params.menus.langswitcher.icon}}" alt=""></a>
+        </nav>
+        <!-- End nav row -->
+
+        <!-- Begin main page content -->
+        <div id="main-content" class="content">
+            <!-- Begin intro row -->
+            <div id="intro" class="row flex-dir-column content-container">
+                <div class="column column-75">
+                    <h2>{{.Site.Params.menus.aboutMe}}</h2>
+                    <p>{{.Site.Params.sections.aboutMe.intro}}
+                        <ul>
+                            {{ range .Site.Params.sections.aboutMe.listItems }}
+                                <li>{{.text}}</li>
+                            {{ end }}
+                            
+                        </ul>
+                        {{.Site.Params.sections.aboutMe.outro}}
+                    </p>
+                </div>
+                <div class="column flex-center">
+                    <!-- <img src="img/stock-laptop.png" alt="" class="img-responsive img-circular"> -->
+                    <i class="icon ion-fw xl-text ion-happy-outline"></i>
+                </div>
+            </div>
+            <!-- End intro row -->
+
+            <!-- Begin projects row -->
+            
+            <div id="projects" class="row content-container">
+                <div class="column">
+                    <h2 class="float-right align-right">{{.Site.Params.menus.projects}}</h2>
+                    <div class="row flex-dir-column-at-m">
+                        {{ range .Site.Params.sections.projects.cards }}
+                            <div class="column flex-center">
+                                <div class="{{.cardClass}}">
+                                    <img class="img-responsive card-img" src="{{.Site.BaseURL}}{{.img}}" alt="">
+                                    <div class="card-title">
+                                        <h3>{{.title}}</h3>
+                                    </div>
+                                    <div class="card-description">
+                                        <p>{{.description}}</p>
+                                    </div>
+                                    <div class="card-controls flex-space-evenly">
+                                        <button class="card-btn gallery-btn">{{ $.Site.Params.gallery }}</button>
+                                        {{if (isset . "downloadLink")}}
+                                        <a href="{{ .downloadLink }}"><button class="card-btn">{{ $.Site.Params.download }}</button></a>
+                                        {{end}}
+                                        <div id="{{.title}}-gallery" class="gallery">
+                                            <div class="img-container">
+                                                {{ range $elem_index, $elem_val := .gallery}}
+                                                    <img data-vb-caption="{{.caption}}" data-vb-high-res="{{.Site.BaseURL}}{{.url}}" alt="{{.alt}}" data-vb-index="{{$elem_index}}">
+                                                {{ end }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {{ end }}                        
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row project-info-container flex-center">
+                <div class="column">
+                    <h2>SportDoma</h2>
+                </div>
+            </div> -->
+            <!-- End projects row -->
+
+            <!-- Begin experience row -->
+            <div id="experience" class="row  content-container">
+                <div class="column">
+                    <h2 class="">{{ .Site.Params.menus.experience}}</h2>
+                    <div class="row flex-dir-column flex-dir-column-at-m padding-bottom">
+                        <div class=" column ">
+                            <h3 class="align-center">{{ .Site.Params.sections.experience.professional }}</h3>
+                            <div class="flex-center">
+                                <div class="badge flex-center">
+                                    <i class="devicon-laravel-plain m-text align-center"></i>
+                                    <span class="badge-description">Laravel</span>
+                                </div>
+                                <div class="badge flex-center">
+                                    <i class="devicon-php-plain m-text align-center"></i>
+                                    <span class="badge-description">PHP7</span>
+                                </div>
+                                <div class="badge flex-center">
+                                    <i class="devicon-html5-plain m-text align-center"></i>
+                                    <span class="badge-description">HTML5</span>
+                                </div>
+                                <div class="badge flex-center">
+                                    <i class="devicon-css3-plain m-text align-center"></i>
+                                    <span class="badge-description">CSS3</span>
+                                </div>
+                            </div>
+                            <div class="flex-center">
+                                <div class="badge flex-center">
+                                    <i class="devicon-javascript-plain m-text align-center"></i>
+                                    <span class="badge-description">JS</span>
+                                </div>
+                                <div class="badge flex-center">
+                                    <i class="devicon-vuejs-plain m-text align-center"></i>
+                                    <span class="badge-description">Vue</span>
+                                </div>
+                                <div class="badge flex-center">
+                                    <i class="devicon-mysql-plain m-text align-center"></i>
+                                    <span class="badge-description">MySQL</span>
+                                </div>
+                                <div class="badge flex-center">
+                                    <i class="devicon-git-plain m-text align-center"></i>
+                                    <span class="badge-description">Git</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column ">
+                            <h3 class="align-center">{{ .Site.Params.sections.experience.hobby }}</h3>
+                            <div class="flex-center">
+                                <div class="badge flex-center">
+                                    <i class="devicon-django-plain m-text align-center"></i>
+                                    <span class="badge-description">Django</span>
+                                </div>
+                                <div class="badge flex-center">
+                                    <i class="devicon-python-plain m-text align-center"></i>
+                                    <span class="badge-description">Python3</span>
+                                </div>
+                                <div class="badge flex-center">
+                                    <i class="devicon-csharp-plain m-text align-center"></i>
+                                    <span class="badge-description">C#</span>
+                                </div>
+                                <div class="badge flex-center">
+                                    <i class="devicon-cplusplus-plain m-text align-center"></i>
+                                    <span class="badge-description">C++</span>
+                                </div>
+                            </div>
+                            <div class="flex-center">
+                                
+                                <div class="badge flex-center">
+                                    <i class="devicon-linux-plain m-text align-center"></i>
+                                    <span class="badge-description">Linux</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End experience row -->
+
+            <!-- Begin contact row -->
+            <div id="contact" class="row content-container contact-bg flex-reverse">
+                <div class="column">
+                    <h2 class="float-right white-text align-right">{{ .Site.Params.menus.contact}}</h2>
+                    <div class="row  flex-center-sm">
+                        <div class="column column-50">
+                            <form action="{{ .Site.Params.sections.contact.form.url }}" method="POST">
+                                <fieldset>
+                                    <input aria-label="{{ .Site.Params.sections.contact.form.namePlaceholder }}" name="name" type="text" placeholder="{{ .Site.Params.sections.contact.form.namePlaceholder }}">
+                                    <input aria-label="{{ .Site.Params.sections.contact.form.emailPlaceholder }}" name="e-mail" type="email" placeholder="{{ .Site.Params.sections.contact.form.namePlaceholder }}">
+                                    <textarea aria-label="{{ .Site.Params.sections.contact.form.messagePlaceholder }}" name="message" placeholder="{{ .Site.Params.sections.contact.form.messagePlaceholder }}"></textarea>
+
+                                    <input class="button-primary" type="submit" value="{{ .Site.Params.sections.contact.form.buttonTitle }}">
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="column column-50">
+                            <h3 class="align-right white-text"> Robert Radošić</h3>
+                            <a title="Moj email" href="mailto:contact@robertradosic.from.hr">
+                                <h4 class="align-right white-text"> contact@robertradosic.from.hr</h4>
+                            </a>
+                            <h4 class="align-right white-text"> {{ .Site.Params.sections.contact.location }}</h4>
+                            <a href="https://www.facebook.com/rradosic" title="" aria-label="Facebook profil"><i class="icon align-right contact-icon float-right m-text white-text ion-logo-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/robert-rado%C5%A1i%C4%87-081433156/" title="" aria-label="LinkedIN profil"><i class="icon align-right contact-icon float-right m-text white-text ion-logo-linkedin"></i></a>
+                            <a href="https://github.com/rradosic/" title="" aria-label="Github profil"><i class="icon align-right contact-icon float-right m-text white-text ion-logo-github"></i></a>
+                            <a href="https://codepen.io/rradosic/collections/" title="" aria-label="Codepen profil"><i class="icon align-right contact-icon float-right m-text white-text ion-logo-codepen"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End contact row -->
+
+        </div>
+        <!-- End main page content -->
+        <footer>
+            <span class="white-text">&copy; Robert Radošić, {{now.Format "2006"}}</span>
+        </footer>
+    </div>
+</body>
+
+</html>
+<script>
+    $(document).on('ready', function() {
+
+        //Say Hello
+        console.log("{{.Site.Params.consoleMessage}}")
+
+        //Init libraries
+        let scrolled = false;
+        let navFixed = false;
+        let waypoint = new Waypoint({
+            element: document.getElementById('main-content'),
+            handler: function(direction) {
+                if (direction == "up") {
+                    navFixed = true;
+                } else if (direction == "down") navFixed = false;
+                setNavClassWidth();
+            }
+        })
+        
+        let scroller = new SmoothScroll('a[href*="#"]');
+
+        gumshoe.init({
+            selector: '[data-gumshoe] a',
+            selectorHeader: '[data-gumshoe-header]',
+            container: window,
+            offset: 0,
+            activeClass: 'is-active',
+        });
+
+        particlesJS.load('particles-js', '{{.Site.BaseURL}}/config/particles.json', function() {
+        });
+
+        function setNavClassWidth() {
+            if (!navFixed) {
+                $('#nav-bar').addClass("main-nav-fixed");
+                navFixed = true;
+            } else if (navFixed) {
+                $('#nav-bar').removeClass("main-nav-fixed");
+                navFixed = false;
+            }
+        }
+
+        $('.menu-button').on('click', function() {
+            $('#nav-bar').toggleClass("open");
+        });
+
+        $('.project-card').on('click', function() {
+            $('.project-info-container').toggleClass("open");
+        });
+       
+
+        $('.gallery-btn').on("click", function(){
+            let parent = this.parentElement;
+            let el = parent.getElementsByClassName('gallery')[0];
+            let gallery = new VanillaBox(el,{
+                imageListeners: false,
+            });
+
+            gallery.open();
+        });
+
+    });
+</script>

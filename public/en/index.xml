@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Robert Radosic - Portfolio</title>
+    <link>https://robertradosic.from.hr/en/</link>
+    <description>Recent content on Robert Radosic - Portfolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>hr-HR</language>
+    
+	<atom:link href="https://robertradosic.from.hr/en/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

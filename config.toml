@@ -1,0 +1,177 @@
+baseURL = "https://robertradosic.from.hr"
+languageCode = "hr-HR"
+DefaultContentLanguage = "hr"
+
+[languages]
+    [languages.hr]
+        title = "Robert Radošić - Portfolio"
+        author = "Robert Radošić"
+        description = "Portfolio web developera. Lociran u Zagrebu. Profesionalno iskustvo s Laravelom, PHP, HTML/CSS/JS"
+        gallery = "Galerija"
+        download = "Preuzmi"
+        consoleMessage = "Bok, vidim da gledaš kod stranice. Slobodno zaviri i nadam se da će ti se svidjeti :)"
+        weight = 1
+        [languages.hr.menu]
+            menuTitle = "IZBORNIK"
+            aboutMe = "O meni"
+            projects = "Projekti"
+            experience = "Iskustvo"
+            contact = "Kontakt"
+            [languages.hr.menu.langswitcher]
+                url = "/en/"
+                label = "English version"
+                icon = "gb.svg"
+        [languages.hr.sections.aboutMe]
+                intro = "Za početak, informatika i sve vezano uz računala me zanima još od kad sam dobio svoje prvo računalo sa 3 godine. Od tada sam odabirao školu i poslove koji su povezani sa računalima. Tako sam završio tehničku školu u Zagrebu te upisao Fakultet organizacije i informatike u Varaždinu. Tokom svog obrazovanja naučio sam mnogo toga, uključujući:"
+                outro = "U slobodno vrijeme bavim se razvojem video igara (Unity, Godot) i eksperimentiranjem sa novim tehnologijama. Također, fan sam open source alata te ih pokušavam koristiti i pridonijeti njihovom razvoju kad god je to moguće."
+                
+                [[languages.hr.sections.aboutMe.listItems]]
+                    text = "Programiranje u raznim programskim jezicima (C++, Lua, C#, PHP)"
+                [[languages.hr.sections.aboutMe.listItems]]
+                    text = "Održavanje računala (kako softverskog, tako i harvderskog dijela)"
+                [[languages.hr.sections.aboutMe.listItems]]
+                    text = "Osnove organizacije poduzeća"
+                [[languages.hr.sections.aboutMe.listItems]]
+                    text = "Komunikacijske i prezentacijske vještine"
+        [languages.hr.sections.projects]            
+                [[languages.hr.sections.projects.cards]]
+                    img = "/img/projects/sportdoma.png"
+                    title = "SportDoma"
+                    cardClass = "project-card"
+                    description = "Stranica sa sporstkim novostima. Uključuje jednostavan i prilagođen CMS za objavu novosti te Vue komponentu za praćenje utakmica uživo"
+                    [[languages.hr.sections.projects.cards.gallery]]
+                        caption = "Početna stranica"
+                        url = "/img/projects/galleries/sportdoma/article_list.png"
+                    [[languages.hr.sections.projects.cards.gallery]]
+                        caption = "Otvoreni članak sa slikom"
+                        url = "/img/projects/galleries/sportdoma/article.png"
+                    [[languages.hr.sections.projects.cards.gallery]]
+                        caption = "Animacija ažuriranje livescore-a"
+                        url = "/img/projects/galleries/sportdoma/livescore.gif"
+                    [[languages.hr.sections.projects.cards.gallery]]
+                        caption = "CMS Popis članaka"
+                        url = "/img/projects/galleries/sportdoma/cms_list.png"
+                    [[languages.hr.sections.projects.cards.gallery]]
+                        caption = "CMS Form za objavu članka"
+                        url = "/img/projects/galleries/sportdoma/cms.png"
+                [[languages.hr.sections.projects.cards]]
+                    img = "/img/projects/radsystem.png"
+                    title = "RADSystem"
+                    cardClass = "project-card-disabled"
+                    description = "Skup sustava za automatizaciju doma. Frontend sučelje se sastoji od kontrola za bežične produžne kabele, upravljanje glazbom te dashboarda sa informacijama ( vrijeme itd.)"
+                [[languages.hr.sections.projects.cards]]
+                    img = "/img/projects/codernotes.png"
+                    title = "Coder Notes"
+                    cardClass = "project-card"
+                    description = "Electron aplikacija za pisanje bilješki. Fokusirana na programere s podrškom za Markdown i kod te u budućnosti jednostavnom sinkronizacijom na više uređaja."
+                    downloadLink = "https://firebasestorage.googleapis.com/v0/b/rradosic-portfolio.appspot.com/o/coder-notes%20Setup%200.10.0.exe?alt=media&token=7cbfcfe3-e9e0-423c-9fd3-73c8d98086fb"
+                    [[languages.hr.sections.projects.cards.gallery]]
+                        caption = "Pregled i uređivanje"
+                        url = "/img/projects/galleries/codernotes/split.png"
+                    [[languages.hr.sections.projects.cards.gallery]]
+                        caption = "Postavke"
+                        url = "/img/projects/galleries/codernotes/preferences.png"
+                    [[languages.hr.sections.projects.cards.gallery]]
+                        caption = "Jedna od drugih tema"
+                        url = "/img/projects/galleries/codernotes/alternate.png"
+        [languages.hr.sections.experience]                  
+            professional = "Profesionalno"
+            hobby = "Hobi"
+
+        [languages.hr.sections.contact]                  
+            location = "Zagreb, Hrvatska"
+            [languages.hr.sections.contact.form]   
+                url = "https://formspree.io/contact@robertradosic.from.hr"
+                namePlaceholder = "Ime"
+                emailPlaceholder = "E-Mail"
+                messagePlaceholder = "Poruka"
+                buttonTitle = "Pošalji"
+            
+    [languages.en]
+        title = "Robert Radosic - Portfolio"
+        author = "Robert Radosic"
+        description = "A web developer's portfolio. Based in Zagreb, Croatia. Professional experience with Laravel, PHP, HTML/CSS/JS"
+        gallery = "Gallery"
+        download = "Download"
+        consoleMessage = "Hi there, I see you're going through the source code. Feel free to take a peek and I hope you'll like what you see :)"
+        weight = 2
+        [languages.en.menu]
+            menuTitle = "MENU"
+            aboutMe = "About Me"
+            projects = "Projects"
+            experience = "Experience"
+            contact = "Contact"
+            [languages.en.menu.langswitcher]
+                url = "/"
+                label = "Hrvatska verzija"
+                icon = "hr.svg"
+        [languages.en.sections.aboutMe]
+                intro = "To begin with, I had an interest in computer science and anything related to computers ever since I got my first computer at three years old. Ever since then my choice of schools and jobs has been influenced by this. Following that, I finished a technichal high school in Zagreb and enrolled in the Faculty of organization and informatics in Varaždin. During my education, I learned many things, some of which include:"
+                outro = "In my free time I develop video games (Unity, Godot) and experiment with new technologies. Also, I'm a fan of open source tools and try to use them whenever I can."
+                
+                [[languages.en.sections.aboutMe.listItems]]
+                    text = "Programming in different programming languages (C++, Lua, C#, PHP)"
+                [[languages.en.sections.aboutMe.listItems]]
+                    text = "Computer maintenance (software and hardware parts likewise)"
+                [[languages.en.sections.aboutMe.listItems]]
+                    text = "Basics of enterprise organization and workflow"
+                [[languages.en.sections.aboutMe.listItems]]
+                    text = "Communication and presentation skills"
+        [languages.en.sections.projects]            
+                [[languages.en.sections.projects.cards]]
+                    img = "/img/projects/sportdoma.png"
+                    title = "SportDoma"
+                    cardClass = "project-card"
+                    description = "Web page with sports news. Includes a simple custom CMS for publishing stories and a Vue component for live score tracking."
+                    [[languages.en.sections.projects.cards.gallery]]
+                        caption = "Index page"
+                        url = "/img/projects/galleries/sportdoma/article_list.png"
+                    [[languages.en.sections.projects.cards.gallery]]
+                        caption = "Opened article with a picture"
+                        url = "/img/projects/galleries/sportdoma/article.png"
+                    [[languages.en.sections.projects.cards.gallery]]
+                        caption = "Livescore update animation"
+                        url = "/img/projects/galleries/sportdoma/livescore.gif"
+                    [[languages.en.sections.projects.cards.gallery]]
+                        caption = "CMS Articles list"
+                        url = "/img/projects/galleries/sportdoma/cms_list.png"
+                    [[languages.en.sections.projects.cards.gallery]]
+                        caption = "CMS Publishing form"
+                        url = "/img/projects/galleries/sportdoma/cms.png"
+                [[languages.en.sections.projects.cards]]
+                    img = "/img/projects/radsystem.png"
+                    title = "RADSystem"
+                    cardClass = "project-card-disabled"
+                    description = 'A collection of systems for home automation. Frontend consists of "wireless" extension cord controls, music controls and a dashboard with useful information (weather etc.)'
+                [[languages.en.sections.projects.cards]]
+                    img = "/img/projects/codernotes.png"
+                    title = "Coder Notes"
+                    cardClass = "project-card"
+                    description = "Electron based application for note taking. Focused on programmers notes, it supports Markdown and in the future synchronization with multiple cloud services providers."
+                    downloadLink = "https://firebasestorage.googleapis.com/v0/b/rradosic-portfolio.appspot.com/o/coder-notes%20Setup%200.10.0.exe?alt=media&token=7cbfcfe3-e9e0-423c-9fd3-73c8d98086fb"
+                    [[languages.en.sections.projects.cards.gallery]]
+                        caption = "Editor and preview"
+                        url = "/img/projects/galleries/codernotes/split.png"
+                    [[languages.en.sections.projects.cards.gallery]]
+                        caption = "Preferences opened"
+                        url = "/img/projects/galleries/codernotes/preferences.png"
+                    [[languages.en.sections.projects.cards.gallery]]
+                        caption = "Alternate theme and full preview"
+                        url = "/img/projects/galleries/codernotes/alternate.png"
+        [languages.en.sections.experience]                  
+            professional = "Professional"
+            hobby = "Hobby"
+
+        [languages.en.sections.contact]                  
+            location = "Zagreb, Hrvatska"
+            [languages.en.sections.contact.form]   
+                url = "https://formspree.io/contact@robertradosic.from.hr"
+                namePlaceholder = "Name"
+                emailPlaceholder = "E-Mail"
+                messagePlaceholder = "Message"
+                buttonTitle = "Send"
+    
+
+[params]
+    
+   jobTitle = "Fullstack web developer - Application developer"
