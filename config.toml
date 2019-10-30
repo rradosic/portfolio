@@ -1,6 +1,7 @@
 baseURL = "https://robertradosic.from.hr"
 languageCode = "hr-HR"
 DefaultContentLanguage = "hr"
+assetsDir = "assets"
 
 [languages]
     [languages.hr]

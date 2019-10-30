@@ -21,12 +21,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.min.css" />
     
     <!-- Internal stylesheets -->
-    <link rel="stylesheet" href="{{.Site.BaseURL}}/css/style.css" type="text/css">
-    <link rel="stylesheet" href="{{.Site.BaseURL}}/css/animations.css" type="text/css">
+    {{ $style := resources.Get "css/style.css" | minify }}
+    {{ $animations := resources.Get "css/animations.css" | minify }}
+    <link rel="stylesheet" href="{{$style.Permalink}}" type="text/css">
+    <link rel="stylesheet" href="{{$animations.Permalink}}" type="text/css">
     <link rel="stylesheet" href="{{.Site.BaseURL}}/css/vanillabox.min.css" type="text/css">
     
     <!-- External libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/cash-dom@1.3.5/dist/cash.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gumshoe/3.5.0/js/gumshoe.min.js"></script>

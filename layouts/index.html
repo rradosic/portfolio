@@ -189,7 +189,7 @@
                             <form action="{{ .Site.Params.sections.contact.form.url }}" method="POST">
                                 <fieldset>
                                     <input aria-label="{{ .Site.Params.sections.contact.form.namePlaceholder }}" name="name" type="text" placeholder="{{ .Site.Params.sections.contact.form.namePlaceholder }}">
-                                    <input aria-label="{{ .Site.Params.sections.contact.form.emailPlaceholder }}" name="e-mail" type="email" placeholder="{{ .Site.Params.sections.contact.form.namePlaceholder }}">
+                                    <input aria-label="{{ .Site.Params.sections.contact.form.emailPlaceholder }}" name="e-mail" type="email" placeholder="{{ .Site.Params.sections.contact.form.emailPlaceholder }}">
                                     <textarea aria-label="{{ .Site.Params.sections.contact.form.messagePlaceholder }}" name="message" placeholder="{{ .Site.Params.sections.contact.form.messagePlaceholder }}"></textarea>
 
                                     <input class="button-primary" type="submit" value="{{ .Site.Params.sections.contact.form.buttonTitle }}">
@@ -222,65 +222,70 @@
 
 </html>
 <script>
-    $(document).on('ready', function() {
 
-        //Say Hello
-        console.log("{{.Site.Params.consoleMessage}}")
+document.addEventListener("DOMContentLoaded", function() {
 
-        //Init libraries
-        let scrolled = false;
-        let navFixed = false;
-        let waypoint = new Waypoint({
-            element: document.getElementById('main-content'),
-            handler: function(direction) {
-                if (direction == "up") {
-                    navFixed = true;
-                } else if (direction == "down") navFixed = false;
-                setNavClassWidth();
-            }
-        })
-        
-        let scroller = new SmoothScroll('a[href*="#"]');
+    //Say Hello
+    console.clear();
+    console.log("{{.Site.Params.consoleMessage}}")
 
-        gumshoe.init({
-            selector: '[data-gumshoe] a',
-            selectorHeader: '[data-gumshoe-header]',
-            container: window,
-            offset: 0,
-            activeClass: 'is-active',
-        });
-
-        particlesJS.load('particles-js', '{{.Site.BaseURL}}/config/particles.json', function() {
-        });
-
-        function setNavClassWidth() {
-            if (!navFixed) {
-                $('#nav-bar').addClass("main-nav-fixed");
+    //Init libraries
+    let scrolled = false;
+    let navFixed = false;
+    let waypoint = new Waypoint({
+        element: document.getElementById('main-content'),
+        handler: function(direction) {
+            if (direction == "up") {
                 navFixed = true;
-            } else if (navFixed) {
-                $('#nav-bar').removeClass("main-nav-fixed");
-                navFixed = false;
-            }
+            } else if (direction == "down") navFixed = false;
+            setNavClassWidth();
         }
+    })
+    
+    let scroller = new SmoothScroll('a[href*="#"]');
 
-        $('.menu-button').on('click', function() {
-            $('#nav-bar').toggleClass("open");
-        });
+    gumshoe.init({
+        selector: '[data-gumshoe] a',
+        selectorHeader: '[data-gumshoe-header]',
+        container: window,
+        offset: 0,
+        activeClass: 'is-active',
+    });
 
-        $('.project-card').on('click', function() {
-            $('.project-info-container').toggleClass("open");
-        });
-       
+    particlesJS.load('particles-js', '{{.Site.BaseURL}}/config/particles.json', function() {
+    });
 
-        $('.gallery-btn').on("click", function(){
+    function setNavClassWidth() {
+        var navBar = document.getElementById('nav-bar');
+        if (!navFixed) {
+            navBar.classList.add("main-nav-fixed");
+            navFixed = true;
+        } else if (navFixed) {
+            navBar.classList.remove("main-nav-fixed");
+            navFixed = false;
+        }
+    }
+
+    var menuButtons = document.querySelector('.menu-button');
+    menuButtons.onclick = function() {
+        var navBar = document.getElementById('nav-bar');
+        navBar.classList.toggle('open');
+    }
+
+    var galleries = document.getElementsByClassName('gallery-btn');
+    for (var i = 0; i < galleries.length; i++) {
+        galleries[i].onclick = function() {
             let parent = this.parentElement;
+            console.log(this);
             let el = parent.getElementsByClassName('gallery')[0];
             let gallery = new VanillaBox(el,{
                 imageListeners: false,
             });
 
             gallery.open();
-        });
+        }
+    }
 
-    });
+});
+
 </script>
